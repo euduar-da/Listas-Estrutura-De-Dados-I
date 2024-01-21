@@ -36,7 +36,7 @@ int main(void){
     
         printf("Os resultados obtidos foram: \n");
         porctFem(perguntaUm, perguntaDois, &pessoasEntrevistadas);
-        masc_ngostaram(perguntaUm, perguntaDois, &pessoasEntrevistadas);
+        mascngostaram(perguntaUm, perguntaDois, &pessoasEntrevistadas);
     
 
     return(0);
