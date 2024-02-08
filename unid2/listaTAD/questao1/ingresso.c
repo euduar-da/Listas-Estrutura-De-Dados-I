@@ -11,23 +11,28 @@ struct ingresso
 
 
 
-void preenche (Ingresso* ingresso)
+void preenche(Ingresso* ingresso,  int qtdIngresso)
 {
-    printf("insira o valor do ingresso: \n");
-    scanf("%f", &ingresso->preco);
-    printf("insira o local: \n");
-    scanf(" %[^\n]", ingresso->local);
-    printf("insira qual a atracao: \n");
-    scanf(" %[^\n]", ingresso->atracao);
+    int i;
+    for(i = 0; i < qtdIngresso; i++) {
+        printf("insira o valor do ingresso: \n");
+        scanf("%f", &ingresso[i].preco);
+        printf("insira o local: \n");
+        scanf(" %[^\n]", ingresso[i].local);
+        printf("insira qual a atracao: \n");
+        scanf(" %[^\n]", ingresso[i].atracao);
+    }
 }
 
-void imprime (Ingresso* ingresso)
+void imprime (Ingresso* ingresso, int qtdIngresso)
 {
+       for(int i = 0; i < qtdIngresso; i++) {
     printf("=================================\n");
-    printf("valor: %.2f \n", ingresso->preco);
-    printf("local: %s \n", ingresso->local);
-    printf("atracao: %s \n", ingresso->atracao);
-   
+    printf("valor: %.2f \n", ingresso[i].preco);
+    printf("local: %s \n", ingresso[i].local);
+    printf("atracao: %s \n", ingresso[i].atracao);
+       }
+
 
 }
 
@@ -55,8 +60,8 @@ void maiorEmenorPreco(Ingresso * ingresso, int qtdIngresso)
         }
     }
     printf("Ingresso mais barato:\n");
-    imprime(&ingresso[minIndex]);
+    printf("%d", minIndex);//mudar aqui
     printf("Ingresso mais caro:\n");
-    imprime(&ingresso[maxIndex]);
+    printf("%d", maxIndex);
     
 }
